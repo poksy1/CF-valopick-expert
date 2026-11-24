@@ -1,0 +1,850 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Rajdhani:wght@500;600;700&display=swap');
+
+:root {
+    --valo-dark: #0f1923;
+    --valo-darker: #0a1017;
+    --valo-card: rgba(22, 33, 45, 0.92);
+    --valo-red: #ff4655;
+    --valo-red-glow: rgba(255, 70, 85, 0.45);
+    --valo-cyan: #00e5ff;
+    --valo-light: #ece8e1;
+    --valo-muted: #9eb0c2;
+}
+
+body {
+    background-color: var(--valo-dark);
+    background-image:
+        radial-gradient(circle at 15% 10%, rgba(255, 70, 85, 0.12), transparent 35%),
+        radial-gradient(circle at 85% 80%, rgba(0, 229, 255, 0.08), transparent 35%),
+        linear-gradient(rgba(236, 232, 225, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(236, 232, 225, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    color: var(--valo-light);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.05rem;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, .font-display {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* Navbar */
+.navbar-valo {
+    background: rgba(10, 16, 23, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--valo-red);
+}
+
+/* Tombol Tactical Cut */
+/* Tombol Utama & Sekunder (Tinggi & Bentuk Simetris) */
+.btn-valo,
+.btn-valo-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 48px;
+    padding: 0 26px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    clip-path: polygon(0 0, 93% 0, 100% 26%, 100% 100%, 7% 100%, 0 74%);
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.btn-valo {
+    background: linear-gradient(135deg, #ff4655 0%, #d92b3a 100%);
+    color: #fff;
+    border: none;
+}
+
+.btn-valo:hover {
+    background: linear-gradient(135deg, #ff5e6b 0%, #ff4655 100%);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--valo-red-glow);
+}
+
+.btn-valo-outline {
+    background: rgba(15, 25, 35, 0.9);
+    color: var(--valo-light);
+    border: 1.5px solid var(--valo-red);
+}
+
+.btn-valo-outline:hover {
+    background: var(--valo-red);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Kartu Tactical */
+.card-valo {
+    background: var(--valo-card);
+    color: var(--valo-light) !important;
+    border: 1px solid rgba(236, 232, 225, 0.14);
+    border-radius: 0;
+    clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.card-valo .form-label,
+.card-valo label,
+.card-valo div {
+    color: var(--valo-light);
+}
+
+.text-secondary {
+    color: var(--valo-muted) !important;
+}
+
+/* Card Peringkat Agent */
+.agent-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 70, 85, 0.6);
+}
+
+.card-top-1 {
+    border: 1px solid var(--valo-red);
+    box-shadow: inset 0 0 30px rgba(255, 70, 85, 0.15), 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Wadah Gambar Agent */
+.agent-visual-box {
+    position: relative;
+    height: 240px;
+    background: radial-gradient(circle at 50% 60%, rgba(255, 70, 85, 0.25), rgba(10, 16, 23, 0.95) 75%);
+    overflow: hidden;
+    border-bottom: 2px solid rgba(255, 70, 85, 0.4);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.agent-watermark {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Oswald', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: rgba(236, 232, 225, 0.06);
+    text-transform: uppercase;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+}
+
+.agent-portrait {
+    position: relative;
+    z-index: 2;
+    height: 235px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.75));
+    transition: transform 0.35s ease;
+}
+
+.agent-card:hover .agent-portrait {
+    transform: scale(1.06);
+}
+
+/* Hero Banner Map di Halaman Hasil */
+.map-hero-banner {
+    position: relative;
+    min-height: 190px;
+    background-color: #131f2b;
+    background-size: cover;
+    background-position: center;
+    border-left: 5px solid var(--valo-red);
+    clip-path: polygon(0 0, calc(100% - 26px) 0, 100% 26px, 100% 100%, 0 100%);
+    overflow: hidden;
+}
+
+.map-hero-overlay {
+    background: linear-gradient(90deg, rgba(10, 16, 23, 0.94) 0%, rgba(15, 25, 35, 0.78) 55%, rgba(15, 25, 35, 0.4) 100%);
+    width: 100%;
+    height: 100%;
+}
+
+/* Live Map Preview di Halaman Konsultasi */
+.map-preview-box {
+    position: relative;
+    height: 190px;
+    border: 1px solid rgba(255, 70, 85, 0.45);
+    background-color: var(--valo-darker);
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+
+.map-preview-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 16, 23, 0.2) 0%, rgba(10, 16, 23, 0.9) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px 20px;
+}
+
+/* Form & Row Hover */
+.kriteria-row {
+    padding: 12px 14px;
+    border-radius: 4px;
+    border-bottom: 1px solid rgba(236, 232, 225, 0.08);
+    transition: background 0.2s ease;
+}
+
+.kriteria-row:hover {
+    background: rgba(255, 70, 85, 0.07);
+}
+
+.form-select-valo, .form-control-valo {
+    background-color: var(--valo-darker);
+    color: var(--valo-light);
+    border: 1px solid rgba(236, 232, 225, 0.25);
+    border-radius: 2px;
+}
+
+.form-select-valo:focus, .form-control-valo:focus {
+    background-color: var(--valo-darker);
+    color: #fff;
+    border-color: var(--valo-red);
+    box-shadow: 0 0 0 0.2rem rgba(255, 70, 85, 0.25);
+}
+
+/* Badge & Progress */
+.badge-role {
+    background-color: rgba(255, 70, 85, 0.16);
+    color: #ff6b77;
+    border: 1px solid var(--valo-red);
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.progress {
+    background-color: rgba(10, 16, 23, 0.9);
+    height: 10px;
+    border-radius: 0;
+}
+
+.progress-bar-valo {
+    background: linear-gradient(90deg, #ff4655, #ff8a65);
+}
+
+/* Accordion Jejak Aturan */
+.accordion-valo .accordion-item {
+    background-color: rgba(10, 16, 23, 0.65);
+    border: 1px solid rgba(236, 232, 225, 0.12);
+}
+
+.accordion-valo .accordion-button {
+    background-color: transparent;
+    color: var(--valo-light);
+    font-weight: 600;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+}
+
+.accordion-valo .accordion-button:not(.collapsed) {
+    color: var(--valo-red);
+    box-shadow: none;
+}
+
+.accordion-valo .accordion-button::after {
+    filter: invert(1);
+}
+
+/* Perbaikan warna placeholder agar terbaca jelas */
+.form-control-valo::placeholder {
+    color: #8b9bb4 !important;
+    opacity: 0.85;
+}
+
+/* Kartu Identitas & Map dengan Background Fade */
+.card-map-hero {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.4s ease-in-out;
+}
+
+/* Lapisan gradien gelap memudar agar form di kiri tetap kontras */
+.card-map-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(15, 25, 35, 0.96) 0%,
+        rgba(15, 25, 35, 0.88) 52%,
+        rgba(15, 25, 35, 0.65) 100%
+    );
+    z-index: 1;
+}
+
+.card-map-hero > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Wadah Minimap Khusus di Sisi Kanan */
+.minimap-stage {
+    min-height: 220px;
+    background: rgba(10, 16, 23, 0.55);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 70, 85, 0.35);
+    clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    text-align: center;
+}
+
+.minimap-stage img {
+    max-height: 175px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 12px rgba(0, 229, 255, 0.45));
+    transition: transform 0.3s ease;
+}
+
+.minimap-stage:hover img {
+    transform: scale(1.06);
+}
+
+/* Minimap yang bisa diklik di banner */
+/* Minimap & Tombol Tactical Board (Anti-Overlap) */
+.minimap-clickable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.minimap-clickable:hover {
+    transform: translateY(-2px);
+}
+
+.minimap-zoom-hint {
+    position: static;
+    transform: none;
+    background: rgba(15, 25, 35, 0.9);
+    color: var(--valo-light);
+    border: 1px solid var(--valo-red);
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    transition: background 0.2s ease;
+}
+
+.minimap-clickable:hover .minimap-zoom-hint {
+    background: var(--valo-red);
+    color: #fff;
+}
+
+/* Modal Tactical Board */
+.modal-valo .modal-content {
+    background-color: var(--valo-darker);
+    border: 2px solid var(--valo-red);
+    border-radius: 0;
+    color: var(--valo-light);
+}
+
+.tactical-canvas {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    background: radial-gradient(circle, rgba(24, 36, 48, 0.9) 0%, rgba(10, 16, 23, 1) 100%);
+    border: 1px solid rgba(236, 232, 225, 0.15);
+    cursor: crosshair;
+    user-select: none;
+    overflow: hidden;
+}
+
+.tactical-canvas img.board-map-img {
+    max-height: 68vh;
+    width: auto;
+    max-width: 100%;
+    display: block;
+    pointer-events: none;
+}
+
+/* Pin Agent di atas Minimap */
+.agent-map-pin {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 2px solid #00e5ff;
+    background-color: var(--valo-dark);
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.7);
+    cursor: grab;
+    z-index: 10;
+    transition: transform 0.1s ease;
+}
+
+.agent-map-pin:active {
+    cursor: grabbing;
+    transform: translate(-50%, -50%) scale(1.15);
+}
+
+.agent-map-pin img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.agent-map-pin .pin-label {
+    position: absolute;
+    top: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(10, 16, 23, 0.9);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 2px;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* Tombol Pilihan Agent di Sidebar Board */
+.agent-picker-btn {
+    background: var(--valo-card);
+    border: 1px solid rgba(236, 232, 225, 0.2);
+    color: var(--valo-light);
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.agent-picker-btn:hover,
+.agent-picker-btn.active {
+    border-color: var(--valo-red);
+    background: rgba(255, 70, 85, 0.18);
+}
+
+.agent-picker-btn img {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: var(--valo-darker);
+}
+
+/* Navbar & Tombol Panel Admin Bergaya Tactical HUD */
+.navbar-brand-hud {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    color: var(--valo-light) !important;
+    text-transform: uppercase;
+}
+
+.nav-link-hud {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--valo-muted) !important;
+    padding: 6px 14px !important;
+    transition: color 0.2s ease;
+}
+
+.nav-link-hud:hover,
+.nav-link-hud.active {
+    color: var(--valo-red) !important;
+}
+
+.btn-admin-hud {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 70, 85, 0.12);
+    color: var(--valo-light);
+    border: 1px solid rgba(255, 70, 85, 0.65);
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.88rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    text-decoration: none;
+    clip-path: polygon(0 0, 90% 0, 100% 30%, 100% 100%, 10% 100%, 0 70%);
+    transition: all 0.25s ease;
+}
+
+.btn-admin-hud:hover {
+    background: var(--valo-red);
+    color: #fff;
+    box-shadow: 0 0 18px var(--valo-red-glow);
+    transform: translateY(-1px);
+}
+
+/* Stat Mini Cards & Parameter Items di Beranda */
+.stat-hud-box {
+    background: rgba(10, 16, 23, 0.72);
+    border: 1px solid rgba(236, 232, 225, 0.12);
+    border-top: 2px solid var(--valo-red);
+    padding: 14px 16px;
+    transition: border-color 0.2s ease;
+}
+
+.stat-hud-box:hover {
+    border-color: rgba(255, 70, 85, 0.6);
+}
+
+.param-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 12px;
+    background: rgba(10, 16, 23, 0.55);
+    border-left: 3px solid var(--valo-red);
+    margin-bottom: 10px;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.param-item:last-child {
+    margin-bottom: 0;
+}
+
+.param-item:hover {
+    transform: translateX(5px);
+    background: rgba(255, 70, 85, 0.08);
+}
+
+.param-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--valo-red);
+    line-height: 1;
+}
+
+/* Ikon Agent Mini di Tabel Riwayat */
+.history-agent-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(255, 70, 85, 0.6);
+    background: var(--valo-darker);
+}
+
+/* Tombol Logout Tactical HUD */
+.btn-logout-hud {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    background: rgba(255, 70, 85, 0.14);
+    color: #ff6b77;
+    border: 1px solid var(--valo-red);
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.88rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 7px 18px;
+    text-decoration: none;
+    line-height: 1;
+    clip-path: polygon(0 0, 88% 0, 100% 30%, 100% 100%, 12% 100%, 0 70%);
+    transition: all 0.22s ease;
+}
+
+.btn-logout-hud:hover {
+    background: var(--valo-red);
+    color: #fff;
+    box-shadow: 0 0 16px var(--valo-red-glow);
+    transform: translateY(-1px);
+}
+
+/* Panel Pilihan Ability di Tactical Board */
+.ability-picker-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.ability-btn {
+    background: var(--valo-card);
+    border: 1px solid rgba(236, 232, 225, 0.2);
+    color: var(--valo-light);
+    padding: 7px 9px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ability-btn:hover,
+.ability-btn.active {
+    border-color: var(--valo-cyan);
+    background: rgba(0, 229, 255, 0.16);
+    color: #fff;
+}
+
+.ability-btn img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.ability-btn span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Pin Ability di atas Minimap (dengan Cincin Area Taktis) */
+.ability-map-pin {
+    position: absolute;
+    width: 68px;
+    height: 68px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: rgba(255, 70, 85, 0.22);
+    border: 1.5px dashed rgba(255, 70, 85, 0.9);
+    box-shadow: 0 0 14px rgba(255, 70, 85, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: grab;
+    z-index: 9;
+    transition: transform 0.1s ease;
+}
+
+.ability-map-pin:active {
+    cursor: grabbing;
+    transform: translate(-50%, -50%) scale(1.12);
+}
+
+.ability-map-pin img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.9));
+    pointer-events: none;
+}
+
+.ability-map-pin .pin-label {
+    position: absolute;
+    top: 102%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(10, 16, 23, 0.92);
+    border: 1px solid rgba(255, 70, 85, 0.6);
+    color: #fff;
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 2px;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+/* =========================================
+   MODE CETAK LAPORAN PDF (@media print)
+   ========================================= */
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 12mm;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    body {
+        background: #ffffff !important;
+        color: #111827 !important;
+        font-size: 10.5pt !important;
+    }
+
+    /* Sembunyikan elemen web yang tidak perlu di PDF */
+    .navbar-valo,
+    .btn-valo,
+    .btn-valo-outline,
+    .modal,
+    .accordion-button::after {
+        display: none !important;
+    }
+
+    .container {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Banner Header Laporan */
+    .map-hero-banner {
+        background-image: none !important;
+        background-color: #f8f9fa !important;
+        border: 1px solid #d1d5db !important;
+        border-left: 6px solid #ff4655 !important;
+        clip-path: none !important;
+        min-height: auto !important;
+        margin-bottom: 18px !important;
+    }
+
+    .map-hero-overlay {
+        background: transparent !important;
+        padding: 16px 20px !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .map-hero-banner h1 {
+        font-size: 20pt !important;
+        color: #0f1923 !important;
+    }
+
+    .map-hero-banner p,
+    .map-hero-banner strong.text-white {
+        color: #1f2937 !important;
+    }
+
+    #heroMinimapImg {
+        height: 95px !important;
+        filter: none !important;
+    }
+
+    /* Kartu Agent Top 3 (Rapi & Tidak Terpotong Antar Halaman) */
+    .row.g-4 {
+        display: block !important;
+    }
+
+    .row.g-4 > .col-lg-4 {
+        width: 100% !important;
+        margin-bottom: 16px !important;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    .card-valo {
+        background: #ffffff !important;
+        color: #111827 !important;
+        border: 1px solid #cbd5e1 !important;
+        clip-path: none !important;
+        box-shadow: none !important;
+    }
+
+    .card-top-1 {
+        border: 2px solid #ff4655 !important;
+    }
+
+    .card-valo div,
+    .card-valo span.text-light,
+    .card-valo p {
+        color: #1f2937 !important;
+    }
+
+    .text-secondary {
+        color: #4b5563 !important;
+    }
+
+    /* Perkecil Box Gambar Agent agar hemat halaman */
+    .agent-visual-box {
+        height: 120px !important;
+        background: #f1f5f9 !important;
+        border-bottom: 2px solid #ff4655 !important;
+    }
+
+    .agent-portrait {
+        height: 115px !important;
+        filter: none !important;
+    }
+
+    .agent-watermark {
+        color: rgba(15, 25, 35, 0.07) !important;
+        font-size: 3.5rem !important;
+    }
+
+    /* Kotak Strategi Attack & Defense */
+    .bg-dark {
+        background-color: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+    }
+
+    .text-info {
+        color: #0284c7 !important;
+    }
+
+    /* Buka otomatis semua Jejak Aturan saat dicetak */
+    .accordion-valo .accordion-collapse {
+        display: block !important;
+        height: auto !important;
+        visibility: visible !important;
+    }
+
+    .accordion-valo .accordion-item {
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+    }
+
+    .accordion-valo .accordion-button {
+        color: #0f1923 !important;
+        padding: 6px 10px !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+    }
+
+    /* Tabel Peringkat Semua Agent */
+    .table-dark {
+        --bs-table-bg: #ffffff !important;
+        --bs-table-color: #111827 !important;
+        --bs-table-border-color: #cbd5e1 !important;
+        color: #111827 !important;
+        border: 1px solid #cbd5e1 !important;
+    }
+
+    .table-dark th {
+        background-color: #0f1923 !important;
+        color: #ffffff !important;
+    }
+
+    .table-dark td {
+        color: #111827 !important;
+    }
+
+    tr {
+        break-inside: avoid !important;
+    }
+}
